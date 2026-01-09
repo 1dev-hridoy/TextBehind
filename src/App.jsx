@@ -1,23 +1,30 @@
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
-import { Hero } from '@/components/sections/Hero'
-import { Features } from '@/components/sections/Features'
-import { ToolSection } from '@/components/sections/ToolSection'
 import { Toaster } from 'sonner'
+import Landing from '@/pages/Landing'
+import NotFound from '@/pages/NotFound'
+import ErrorPage from '@/pages/ErrorPage'
+import ComingSoon from '@/pages/ComingSoon'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50 font-sans text-gray-900 selection:bg-indigo-100 selection:text-indigo-900">
-      <Navbar />
-      <main>
-        <Hero />
-        <ToolSection />
-        <Features />
-      </main>
-      <Footer />
-      <Toaster position="top-center" richColors />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-gray-50 font-sans text-gray-900 selection:bg-indigo-100 selection:text-indigo-900">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/coming-soon" element={<ComingSoon />} />
+            <Route path="/500" element={<ErrorPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+        <Toaster position="top-center" richColors />
+      </div>
+    </Router>
   )
 }
 
