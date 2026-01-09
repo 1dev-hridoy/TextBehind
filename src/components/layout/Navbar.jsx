@@ -7,6 +7,7 @@ export function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16 items-center">
                     <div className="flex items-center gap-2">
+                        <img src="/logo.jpg" alt="Logo" className="w-8 h-8 rounded-full border border-border shadow-sm object-cover" />
                         <span className="text-xl font-bold text-foreground tracking-tight">
                             TextBehind
                         </span>

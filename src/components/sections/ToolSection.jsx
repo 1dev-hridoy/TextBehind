@@ -12,15 +12,14 @@ import { Upload, Type, Palette, Maximize, FileImage, Image as ImageIcon, Loader2
 import html2canvas from 'html2canvas'
 
 const fontOptions = [
-    { value: 'Arial, sans-serif', label: 'Arial' },
-    { value: 'Helvetica, sans-serif', label: 'Helvetica' },
-    { value: 'Times New Roman, serif', label: 'Times New Roman' },
-    { value: 'Georgia, serif', label: 'Georgia' },
-    { value: 'Courier New, monospace', label: 'Courier New' },
-    { value: 'Verdana, sans-serif', label: 'Verdana' },
-    { value: 'Impact, sans-serif', label: 'Impact' },
-    { value: 'Comic Sans MS, cursive', label: 'Comic Sans' },
-    { value: 'Inter, sans-serif', label: 'Inter' },
+    { value: 'Inter', label: 'Inter' },
+    { value: 'Anton', label: 'Anton' },
+    { value: 'Hind Siliguri', label: 'Hind Siliguri' },
+    { value: 'Indie Flower', label: 'Indie Flower' },
+    { value: 'Luckiest Guy', label: 'Luckiest Guy' },
+    { value: 'Oswald', label: 'Oswald' },
+    { value: 'Satisfy', label: 'Satisfy' },
+    { value: 'Ubuntu', label: 'Ubuntu' },
 ]
 
 const colorOptions = [
@@ -63,7 +62,7 @@ export function ToolSection() {
     const [maskUrl, setMaskUrl] = useState(null)
 
     const [textInput, setTextInput] = useState('')
-    const [selectedFont, setSelectedFont] = useState('Arial, sans-serif')
+    const [selectedFont, setSelectedFont] = useState('Inter')
     const [selectedColor, setSelectedColor] = useState('#ffffff')
     const [selectedSize, setSelectedSize] = useState('6rem')
     const [isProcessing, setIsProcessing] = useState(false)

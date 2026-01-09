@@ -2,11 +2,31 @@
 import express from 'express';
 import cors from 'cors';
 import sharp from 'sharp';
-import { createCanvas } from 'canvas';
+import { createCanvas, registerFont } from 'canvas';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Register Custom Fonts
+const fontsDir = path.join(process.cwd(), 'src/assets/fonts');
+
+registerFont(path.join(fontsDir, 'Anton-Regular.ttf'), { family: 'Anton' });
+registerFont(path.join(fontsDir, 'HindSiliguri-Regular.ttf'), { family: 'Hind Siliguri' });
+registerFont(path.join(fontsDir, 'HindSiliguri-Bold.ttf'), { family: 'Hind Siliguri', weight: 'bold' });
+registerFont(path.join(fontsDir, 'IndieFlower-Regular.ttf'), { family: 'Indie Flower' });
+registerFont(path.join(fontsDir, 'Inter-VariableFont_opsz,wght.ttf'), { family: 'Inter' });
+registerFont(path.join(fontsDir, 'LuckiestGuy-Regular.ttf'), { family: 'Luckiest Guy' });
+registerFont(path.join(fontsDir, 'Oswald-VariableFont_wght.ttf'), { family: 'Oswald' });
+registerFont(path.join(fontsDir, 'Satisfy-Regular.ttf'), { family: 'Satisfy' });
+registerFont(path.join(fontsDir, 'Ubuntu-Regular.ttf'), { family: 'Ubuntu' });
+registerFont(path.join(fontsDir, 'Ubuntu-Bold.ttf'), { family: 'Ubuntu', weight: 'bold' });
+
 
 const app = express();
 
